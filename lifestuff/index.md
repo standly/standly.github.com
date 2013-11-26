@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Welcome
-permalink: /itstuff/home/
+permalink: /lifestuff/home/
 ---
 {% assign items = site.categories.itstuff %}
 
