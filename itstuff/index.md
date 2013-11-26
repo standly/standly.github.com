@@ -9,13 +9,13 @@ permalink: /itstuff/home/
 {% for item in items %}
   {% assign item_url = item | prepend:'/itstuff/' | append:'/' %}
 
-  {% if item_url == page.url %}
+  {% if item_url == post.url %}
     {% assign c = 'current' %}
   {% else %}
     {% assign c = '' %}
   {% endif %}
 
-  {% for p in site.pages %}
+  {% for p in site.posts %}
     {% if p.url == item_url %}
       <li class="{{ c }}"><a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
     {% endif %}
