@@ -2,4 +2,5 @@ pygments: true
 relative_permalinks: false
 permalink: /news/:year/:month/:day/:title/
 excerpt_separator: noifniof3nioaniof3nioafafinoafnoif
+paginator: 10
 repository: https://github.com/standly/standly.github.com
