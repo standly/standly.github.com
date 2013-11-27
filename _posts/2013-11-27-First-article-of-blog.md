@@ -1,6 +1,6 @@
 ---
-layout:post
-category:lifestuff
+layout: post
+title: First Post Of My Blog
 ---
 
 ###Hello Blog World
