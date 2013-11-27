@@ -14,7 +14,7 @@ permalink: /itstuff/home/
 
 {% for item in site.categories.itstuff %}
 	{{item}}
-{{% endfor %}}
+{% endfor %}
 
 <ul>
   {% for post in site.posts %}
