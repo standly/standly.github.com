@@ -3,24 +3,12 @@ layout: default
 title: Welcome
 permalink: /itstuff/home/
 ---
-{% assign items = site.categories.itstuff %}
 
 <ul>
-{% for item in items %}
-  {% assign item_url = item | prepend:'/itstuff/' | append:'/' %}
-
-  {% if item_url == post.url %}
-    {% assign c = 'current' %}
-  {% else %}
-    {% assign c = '' %}
-  {% endif %}
-
-  {% for p in site.posts %}
-    {% if p.url == item_url %}
-      <li class="{{ c }}"><a href="{{ site.url }}{{ p.url }}">{{ p.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-
+{% for post in site.categories.itstuff %}
+   <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
 {% endfor %}  
 </ul>
 
