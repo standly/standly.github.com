@@ -1,6 +1,6 @@
 ---
 layout:post
-category:生活相关
+category:life stuff
 title:第一篇文章
 ---
 
