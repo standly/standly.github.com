@@ -1,6 +1,6 @@
 ---
 layout:post
-category:life stuff
+category:lifestuff
 ---
 
 ###Hello Blog World
