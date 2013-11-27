@@ -1,7 +1,6 @@
 ---
 layout:post
 category:life stuff
-title:第一篇文章
 ---
 
 ###Hello Blog World
