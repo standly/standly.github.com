@@ -1,0 +1,10 @@
+---
+layout:post
+category:生活相关
+title:第一篇文章
+---
+
+###Hello Blog World
+
+  终于，终于把这个博客搭建起来了。剩下的就看我能不能坚持写下去了！！！
+  good luck for me！！！
