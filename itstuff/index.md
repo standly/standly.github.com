@@ -12,7 +12,7 @@ permalink: /itstuff/home/
 {% endfor %}  
 </ul>
 
-{% for item in site.categories %}
+{% for item in site.categories.itstuff %}
 	{{item}}
 {{% endfor %}}
 
@@ -23,4 +23,4 @@ permalink: /itstuff/home/
     </li>
   {% endfor %}
 </ul>
-###Hello error !$$$$
+###Hello error !567
