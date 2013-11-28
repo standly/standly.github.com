@@ -1,6 +1,7 @@
 ---
 layout: post
 title: First Post Of My Blog
+category: life
 ---
 
 ###Hello Blog World
