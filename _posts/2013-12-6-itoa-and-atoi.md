@@ -21,7 +21,7 @@ tags: 算法 Algorithm itoa  atoi
 对于122这个数字来说，我们会先读取1，然后是2，最后是最后一个2.  
 跟我们书写的顺序是一样的，先写1，再写2，最后还是2.  
 然后写在纸上的话就是：开始是1，然后变成12，最后变成122  
-可以发现他们变化的过程就是：0*10+1，1*10+2，12*10+2  
+可以发现他们变化的过程就是：0  \*  10+1，1  \*  10+2，12  \*  10+2  
 这个过程就是我们的算法了。一次性遍历就可以解决问题了。而且不需要知道字符串的长度。  
 
 以上的东西，其实只是核心算法，因为输入是字符串，所以我们还需要处理不合理输入的问题。  
@@ -30,16 +30,16 @@ tags: 算法 Algorithm itoa  atoi
 所以当遇到这些字符就可以返回了。至于是返回错误还是返回什么就可以自己定义了。  
 
 我这里为了简化实现，在遇到不合理字符时，就返回已有的结果。一下就是我的实现：  
-	int A2i(const char * a)
+	int A2i(const char   \*   a)
 	{
 		int isMinus=a[0]=='-';
-		char *c=isMinus||a[0]=='+'?a+1:a;	//跳过正负号 
+		char   \*  c=isMinus||a[0]=='+'?a+1:a;	//跳过正负号 
 		int res=0;
-		while(*c!='\0')
+		while(  \*  c!='\0')
 		{
-			if(*c>=0||*c<=9)
+			if(  \*  c>=0||  \*  c<=9)
 			{
-				res=(res<<1)+(res<<3)+*c-'0';//根据权值构造数字,这里用移位实现了res*10的操作
+				res=(res<<1)+(res<<3)+  \*  c-'0';//根据权值构造数字,这里用移位实现了res  \*  10的操作
 			}
 			else
 			{
@@ -57,30 +57,30 @@ tags: 算法 Algorithm itoa  atoi
 因为itoa，需要将10进制转换为不同进制下的字符串表示。而且我找不到能够一遍做完的算法。查了下现有的实现，  
 一般都需要两遍，第一次根据相应权值得出的字符串还需要再逆序转为正确的结果。  
 我直接附上一份网上找到的实现吧：  
-	char *I2a(int num,char *str,int radix)
+	char   \*  I2a(int num,char   \*  str,int radix)
 	{
-	　　/* 索引表 */
+	　　// 索引表 
 	　　char index[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	　　unsigned unum; /* 中间变量 */
+	　　unsigned unum; // 中间变量 
 	　　int i=0,j,k;
-	　　/* 确定unum的值 */
-	　　if(radix==10&&num<0) /* 十进制负数 */
+	　　// 确定unum的值 
+	　　if(radix==10&&num<0) // 十进制负数 
 	　　{
 	　　	unum=(unsigned)-num;
 	　　	str[i++]='-';
 	　　}
-	　　else unum=(unsigned)num; /* 其他情况 */
-	　　/* 逆序 */
+	　　else unum=(unsigned)num; // 其他情况 
+	　　// 逆序 
 	　　do
 	　　{
 	　　	str[i++]=index[unum%(unsigned)radix];
 	　　	unum/=radix;
 	　　}while(unum);
 	　　str='\0';
-	　　/* 转换 */
-	　　if(str[0]=='-') k=1; /* 十进制负数 */
+	　　// 转换 
+	　　if(str[0]=='-') k=1; // 十进制负数 
 	　　else k=0;
-	　　/* 将原来的“/2”改为“/2.0”，保证当num在16~255之间，radix等于16时，也能得到正确结果 */
+	　　// 将原来的“/2”改为“/2.0”，保证当num在16~255之间，radix等于16时，也能得到正确结果 
 	　　for(j=k;j<(i-1)/2.0+k;j++) 
 	　　{
 		　　num=str[j];
